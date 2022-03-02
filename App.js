@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider, BottomNavigation } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/login/LoginScreen';
@@ -19,7 +19,34 @@ const theme = {
   },
 };
 
+const MusicRoute = () => <Text>Music</Text>;
+
+const CategoriesRoute = () => <Text>Categories</Text>;
+
+const AlbumsRoute = () => <Text>Albums</Text>;
+
+const RecentsRoute = () => <Text>Recents</Text>;
+
+
+
 export default function App() {
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'music', title: 'Home', icon: 'home' },
+    { key: 'categories', title: 'Categorias', icon: 'format-list-bulleted-square' },
+    { key: 'albums', title: 'Favoritos', icon: 'heart' },
+    { key: 'recents', title: 'Perfil', icon: 'account' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    music: MusicRoute,
+    categories: CategoriesRoute,
+    albums: AlbumsRoute,
+    recents: RecentsRoute,
+  });
+
+
   return (
     <PaperProvider theme={theme}>
     <NavigationContainer>
@@ -28,7 +55,16 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Bottom" component={Bottom} />
       </Stack.Navigator>
+
+      <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene} />
+
     </NavigationContainer>
+
+    
+
     </PaperProvider>
   );
 }

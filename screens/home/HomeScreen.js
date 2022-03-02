@@ -4,15 +4,9 @@ import { auth } from '../../firebase'
 import firebase from '../../firebase'
 import * as React from 'react';
 import { useState } from 'react';
-import { BottomNavigation, TextInput, Text, Button, Surface, Searchbar, 
-  Avatar, Card, Title, Paragraph } from 'react-native-paper';
+import { TextInput, Text, Button, Surface, Searchbar, 
+  Avatar, Card } from 'react-native-paper';
 
-
-const MusicRoute = () => <Text>Music</Text>;
-
-  const AlbumsRoute = () => <Text>Albums</Text>;
-  
-  const RecentsRoute = () => <Text>Recents</Text>;
 
 const HomeScreen = () => {
   const navigation = useNavigation()
@@ -80,18 +74,6 @@ const HomeScreen = () => {
     }
   }, [open]);
 
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'music', title: 'Music', icon: 'music' },
-    { key: 'albums', title: 'Albums', icon: 'album' },
-    { key: 'recents', title: 'Recents', icon: 'history' },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-  });
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -101,48 +83,25 @@ const HomeScreen = () => {
 
   return (  
 
-
       <><Surface style={styles.surface}>
       <Text>Surface</Text>
-    </Surface>
-
-<View style={{width: '90%', alignSelf: 'center', position: 'absolute', marginTop: '60%'}}>
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-    />
-    </View>
-
-<View style={{width: '80%', alignSelf: 'center', marginTop: '10%' }}>
-    <Card>
-    <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-    <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-  </Card>
-  </View>
-    
-    <View style={{marginTop: '20%'}}>
-        <Text>Email: {auth.currentUser?.email}</Text>
-        <TextInput
-          outlined
-          label="Nome"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          right={<TextInput.Icon name="email" />}
-          options={{ width: '50%' }} />
+    </Surface><View style={{ width: '90%', alignSelf: 'center', position: 'absolute', marginTop: '60%' }}>
+        <Searchbar
+          placeholder="Search"
+          onChangeText={onChangeSearch}
+          value={searchQuery} />
+      </View><View style={{ width: '80%', alignSelf: 'center', marginTop: '10%' }}>
+        <Card>
+          <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+        </Card>
+      </View><View style={{ marginTop: '5%' }}>
 
         <Button icon="logout" mode="contained" onPress={handleSignOut}>
           Sair
-        </Button>     
+        </Button>
       </View>
-      
-      <BottomNavigation
-          navigationState={{ index, routes }}
-          onIndexChange={setIndex}
-          renderScene={renderScene} 
-          />
-      
-      </>
+        </>
 
     
   )

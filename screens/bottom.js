@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BottomNavigation, Text } from 'react-native-paper';
+import { BottomNavigation, Text, Drawer } from 'react-native-paper';
 
 const MusicRoute = () => <Text>Music</Text>;
 
@@ -21,12 +21,24 @@ const Bottom = () => {
     recents: RecentsRoute,
   });
 
+  const [active, setActive] = React.useState('');
+
   return (
-    <BottomNavigation
+    <><BottomNavigation
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+      renderScene={renderScene} />
+      <Drawer.Section title="Some title">
+        <Drawer.Item
+          label="First Item"
+          active={active === 'first'}
+          onPress={() => setActive('first')} />
+        <Drawer.Item
+          label="Second Item"
+          active={active === 'second'}
+          onPress={() => setActive('second')} />
+      </Drawer.Section>
+      </>
   );
 };
 
