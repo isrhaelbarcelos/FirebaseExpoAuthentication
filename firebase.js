@@ -5,12 +5,13 @@ import * as firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCLA4vnLFaVow25ylLUkb57NhmnN6qk1vE",
-  authDomain: "fir-auth-65294.firebaseapp.com",
-  projectId: "fir-auth-65294",
-  storageBucket: "fir-auth-65294.appspot.com",
-  messagingSenderId: "105428798939",
-  appId: "1:105428798939:web:49a9375f32ea94d4dfebfe"
+  apiKey: "AIzaSyAlHdnlJ6ZuWF-HSDk2FOtB8d4Uov8uBuI",
+  authDomain: "webbacktrash.firebaseapp.com",
+  projectId: "webbacktrash",
+  storageBucket: "webbacktrash.appspot.com",
+  messagingSenderId: "890900383081",
+  appId: "1:890900383081:web:e4914161a103ae340669f8",
+  measurementId: "G-2578MKC2BE"
 };
 
 // Initialize Firebase
