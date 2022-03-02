@@ -133,7 +133,7 @@ const HomeScreen = () => {
           options={{ width: '50%' }} />
 
         <Button icon="logout" mode="contained" onPress={handleSignOut}>
-          Sair
+          Sairt
         </Button>
 
         <BottomNavigation
