@@ -80,10 +80,11 @@ const HomeScreen = () => {
     }
   }, [open]);
 
+  const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'music', title: 'Music', icon: 'album', color: '#3F51B5' },
-    { key: 'albums', title: 'Albums', icon: 'album', color: '#009688' },
-    { key: 'recents', title: 'Recents', icon: 'history', color: '#795548' },
+    { key: 'music', title: 'Music', icon: 'music' },
+    { key: 'albums', title: 'Albums', icon: 'album' },
+    { key: 'recents', title: 'Recents', icon: 'history' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
@@ -91,8 +92,6 @@ const HomeScreen = () => {
     albums: AlbumsRoute,
     recents: RecentsRoute,
   });
-
-  const [index, setIndex] = React.useState(0);
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -133,14 +132,17 @@ const HomeScreen = () => {
           options={{ width: '50%' }} />
 
         <Button icon="logout" mode="contained" onPress={handleSignOut}>
-          Sairt
-        </Button>
-
-        <BottomNavigation
+          Sair
+        </Button>     
+      </View>
+      
+      <BottomNavigation
           navigationState={{ index, routes }}
           onIndexChange={setIndex}
-          renderScene={renderScene} />
-      </View></>
+          renderScene={renderScene} 
+          />
+      
+      </>
 
     
   )
