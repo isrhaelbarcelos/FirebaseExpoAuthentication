@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { auth } from '../../firebase'
-import { Button, TextInput, Drawer } from 'react-native-paper';
+import { Button, TextInput, Drawer, Subheading, Title, Caption, Divider, IconButton } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
 
 const LoginScreen = () => {
@@ -17,7 +17,7 @@ const LoginScreen = () => {
     buttonContainer: {
       paddingTop: 20,
     },
-    });
+  });
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -41,7 +41,7 @@ const LoginScreen = () => {
         const user = userCredentials.user;
         console.log('Registered with:', user.email);
       })
-      .catch(error => alert(error.message))
+      .catch(error => alert("Campos inválidos!"))
   }
 
   const handleLogin = () => {
@@ -51,7 +51,7 @@ const LoginScreen = () => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
       })
-      .catch(error => alert(error.message))
+      .catch(error => alert("Preencha os campos corretamente!"))
   }
 
   const [text, setText] = React.useState("");
@@ -73,9 +73,33 @@ const LoginScreen = () => {
     <KeyboardAvoidingView
       behavior="padding"
     >
-      <View style={{alignItems: 'center'}}>
-      <LottieView
-      resizeMode='cover' autoSize autoPlay loop
+<View style={{ alignItems: 'center' }}>
+      <Title style={{ marginTop: '20%', color: 'green' }}>Login</Title>
+      <Caption style={{ color: 'grey' }}>Acesse com</Caption>     
+      </View>
+      <Divider style={{width: '90%', alignSelf: 'center'}}/>
+
+      <View style={{ alignSelf: 'center', flexDirection:'row', marginTop: '8%' }}>
+      <IconButton
+    icon="facebook"
+    mode="contained"
+    size={50}
+    onPress={() => console.log('Pressed')}
+  />
+  <IconButton
+  icon="google-plus"
+  mode="contained"
+  size={50}
+  onPress={() => console.log('Pressed')}
+/>
+
+  </View>
+  <Caption style={{ color: 'grey', alignSelf: 'center',marginTop: '3%' }}>ou através do E-mail</Caption>
+  <Divider style={{width: '90%', alignSelf: 'center'}}/>
+
+     {/*  <View style={{ alignItems: 'center' }}>
+        <LottieView
+          resizeMode='cover' autoSize autoPlay loop
           ref={animation => {
             this.animation = animation;
           }}
@@ -84,55 +108,57 @@ const LoginScreen = () => {
             height: 200,
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: '25%',
+            marginTop: '5%',
           }}
           source={require('../../login.json')}
-          // OR find more Lottie files @ https://lottiefiles.com/featured
-          // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
-        /></View>
-      <View style={{alignItems: 'center', marginTop: '10%',}}>
+        // OR find more Lottie files @ https://lottiefiles.com/featured
+        // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
+        /></View> */}
+      <View style={{ alignItems: 'center', }}>
+        <Subheading style={{ alignSelf: 'left', marginTop: '3%', marginLeft: '10%', color: 'green' }}>E-mail</Subheading>
         <TextInput
-        label="E-mail"
-          placeholder="E-mail"
+          label="E-mail"
+          placeholder="exemlo@exemplo.com"
           value={email}
           onChangeText={text => setEmail(text)}
-          right={<TextInput.Icon name="email" color="lightgrey"/>}
-          style={{ width: '80%', color: '#73D408'}}
+          right={<TextInput.Icon name="email" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
           mode="outlined"
-          raised theme={{ roundness: 3 }}
+          raised theme={{ roundness: 9 }}
         />
+        <Subheading style={{ alignSelf: 'left', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Senha</Subheading>
         <TextInput
-        label="Senha"
-          placeholder="Senha"
+          label="Senha"
+          placeholder="**********"
           value={password}
           onChangeText={text => setPassword(text)}
           right={<TextInput.Icon name="eye" color="lightgrey" />}
-          style={{ width: '80%', }}
+          style={{ width: '85%',}}
           mode="outlined"
-          raised theme={{ roundness: 3 }}
+          raised theme={{ roundness: 9 }}
           secureTextEntry
         />
       </View>
 
-      <View style={{alignItems: 'center', marginTop: '5%',}}>
+      <View style={{ alignItems: 'center', marginTop: '25%', }}>
         <Button
           onPress={handleLogin}
-          mode="contained" 
-          raised theme={{ roundness: 3 }}
-          style={{ width: '50%',}}                
+          mode="contained"
+          raised theme={{ roundness: 9 }}
+          style={{ width: '85%', height: '25%', justifyContent:'center' , elevation: 0 }}
         >
           Entrar
         </Button>
         <Button
           onPress={handleSignUp}
           mode="text"
-          raised theme={{ roundness: 3 }}
-          style={{ width: '50%', marginTop: '3%', }} 
+          raised theme={{ roundness: 6 }}
+          style={{ width: '50%', marginTop: '3%', }}
         >
           Crie sua conta
         </Button>
       </View>
-     
+
     </KeyboardAvoidingView>
   )
 }
@@ -154,7 +180,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
     marginTop: 5,
-    
+
   },
   buttonContainer: {
     width: '100%',

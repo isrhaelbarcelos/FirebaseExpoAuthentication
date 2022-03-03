@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/core'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { auth } from '../../firebase'
 import firebase from '../../firebase'
 import * as React from 'react';
@@ -82,27 +82,28 @@ const HomeScreen = () => {
   const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
   return (  
+    
+    <><View>
+      <Surface style={styles.surface}>
+        <Text>Surface</Text>
+      </Surface>
+    </View>
+    <ScrollView>
+        <View style={{ width: '90%', alignSelf: 'center',  }}>
+          <Searchbar
+            placeholder="Search"
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+            style={{ elevation: 3, }} />
+        </View>
+        <View style={{ marginTop: '10%' }}>
+          <Button icon="logout" mode="contained" onPress={handleSignOut}>
+            Sair
+          </Button>
+        </View>
 
-      <><Surface style={styles.surface}>
-      <Text>Surface</Text>
-    </Surface><View style={{ width: '90%', alignSelf: 'center', position: 'absolute', marginTop: '60%' }}>
-        <Searchbar
-          placeholder="Search"
-          onChangeText={onChangeSearch}
-          value={searchQuery} />
-      </View><View style={{ width: '80%', alignSelf: 'center', marginTop: '10%' }}>
-        <Card>
-          <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-        </Card>
-      </View><View style={{ marginTop: '5%' }}>
 
-        <Button icon="logout" mode="contained" onPress={handleSignOut}>
-          Sair
-        </Button>
-      </View>
-        </>
-
+      </ScrollView></>
     
   )
 }
@@ -111,8 +112,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   surface: {
-    padding: 8,
-    height: '40%',
+    height: '50%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
