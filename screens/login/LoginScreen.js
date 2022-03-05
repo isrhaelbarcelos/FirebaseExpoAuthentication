@@ -1,11 +1,17 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { auth } from '../../firebase'
-import { Button, TextInput, Drawer, Subheading, Title, Caption, Divider, IconButton } from 'react-native-paper';
+import { Button, TextInput, Drawer, Subheading, Title, Caption, Divider, IconButton, Provider, Modal,
+Text, Portal } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
+import CadastroUsuario from '../cadastro-usuario/CadastroUsuario';
 
 const LoginScreen = () => {
+
+  const abrirCadastro = () => {
+    setCadastrar(true);
+  };
 
   const styles = StyleSheet.create({
     animationContainer: {
@@ -27,13 +33,15 @@ const LoginScreen = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
-        navigation.replace("Home")
+        navigation.replace("Main")
       }
     })
 
     return unsubscribe
   }, [])
 
+
+  
   const handleSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -69,11 +77,22 @@ const LoginScreen = () => {
 
   const [active, setActive] = React.useState('');
 
+  const [visible, setVisible] = React.useState(false);
+
+  const [abrir, setCadastrar] = React.useState(false);
+
+
+  const hideModal = () => {
+    setCadastrar(false);
+    setVisible(false);}
+  const containerStyle = {backgroundColor: 'white', padding: 20};
+
   return (
     <KeyboardAvoidingView
-      behavior="padding"
+    behavior={Platform.OS == "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={80}
     >
-<View style={{ alignItems: 'center' }}>
+<View style={{ alignItems: 'center'}}>
       <Title style={{ marginTop: '20%', color: 'green' }}>Login</Title>
       <Caption style={{ color: 'grey' }}>Acesse com</Caption>     
       </View>
@@ -84,7 +103,7 @@ const LoginScreen = () => {
     icon="facebook"
     mode="contained"
     size={50}
-    onPress={() => console.log('Pressed')}
+    onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}
   />
   <IconButton
   icon="google-plus"
@@ -159,7 +178,17 @@ const LoginScreen = () => {
         </Button>
       </View>
 
+      <Provider>
+      <Portal>
+        <Modal visible={abrir} onDismiss={hideModal} contentContainerStyle={containerStyle}>
+          <CadastroUsuario/>
+        </Modal>
+      </Portal>
+    </Provider>
+
+
     </KeyboardAvoidingView>
+    
   )
 }
 

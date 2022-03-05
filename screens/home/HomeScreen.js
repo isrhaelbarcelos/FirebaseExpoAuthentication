@@ -81,13 +81,7 @@ const HomeScreen = () => {
 
   const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
-  return (  
-    
-    <><View>
-      <Surface style={styles.surface}>
-        <Text>Surface</Text>
-      </Surface>
-    </View>
+  return ( 
     <ScrollView>
         <View style={{ width: '90%', alignSelf: 'center',  }}>
           <Searchbar
@@ -101,9 +95,7 @@ const HomeScreen = () => {
             Sair
           </Button>
         </View>
-
-
-      </ScrollView></>
+      </ScrollView>
     
   )
 }
