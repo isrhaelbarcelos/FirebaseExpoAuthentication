@@ -7,6 +7,7 @@ import Home from './home/HomeScreen';
 import Perfil from './perfil/perfil';
 import Categoria from './categorias/categorias';
 import Carrinho from './carrinho/carrinho';
+import CadastroUsuario from './cadastro-usuario/CadastroUsuario';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 const Tab = createBottomTabNavigator();
@@ -52,6 +53,16 @@ export function Main() {
       <Tab.Screen
         name="Perfil"
         component={Perfil}
+        options={{       
+        headerShown: false,
+          tabBarIcon: ({ size, color  }) => (
+            <MaterialCommunityIcons name="account-circle" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="CadastroUsuario"
+        component={CadastroUsuario}
         options={{       
         headerShown: false,
           tabBarIcon: ({ size, color  }) => (

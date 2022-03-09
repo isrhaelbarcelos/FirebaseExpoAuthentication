@@ -10,7 +10,7 @@ import CadastroUsuario from '../cadastro-usuario/CadastroUsuario';
 const LoginScreen = () => {
 
   const abrirCadastro = () => {
-    setCadastrar(true);
+    navigation.navigate('CadastroUsuario');
   };
 
   const styles = StyleSheet.create({
@@ -169,7 +169,7 @@ const LoginScreen = () => {
           Entrar
         </Button>
         <Button
-          onPress={handleSignUp}
+          onPress={() => navigation.navigate('CadastroUsuario')}
           mode="text"
           raised theme={{ roundness: 6 }}
           style={{ width: '50%', marginTop: '3%', }}
