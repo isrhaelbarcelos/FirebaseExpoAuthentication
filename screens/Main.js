@@ -8,7 +8,6 @@ import Perfil from './perfil/perfil';
 import Categoria from './categorias/categorias';
 import Carrinho from './carrinho/carrinho';
 import CadastroUsuario from './cadastro-usuario/CadastroUsuario';
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 const Tab = createBottomTabNavigator();
 
