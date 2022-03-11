@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useNavigation } from '@react-navigation/core'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -18,7 +17,7 @@ export function Main() {
       initialRouteName="Home"
       tabBarOptions={{
         activeTintColor: '#009b00',
-      }}   
+      }}
       >
       <Tab.Screen
         name="Home"
@@ -59,16 +58,7 @@ export function Main() {
           ),
         }}
       />
-      <Tab.Screen
-        name="CadastroUsuario"
-        component={CadastroUsuario}
-        options={{       
-        headerShown: false,
-          tabBarIcon: ({ size, color  }) => (
-            <MaterialCommunityIcons name="account-circle" size={size} color={color} />
-          ),
-        }}
-      />
+      
     </Tab.Navigator>
   )
 }

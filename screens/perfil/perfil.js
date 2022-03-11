@@ -1,9 +1,7 @@
 import { useNavigation } from '@react-navigation/core'
-import { KeyboardAvoidingView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
-import { auth } from '../../firebase'
-import firebase from '../../firebase'
+import { KeyboardAvoidingView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { auth } from '../../firebase';
 import * as React from 'react';
-import { useState } from 'react';
 import {
   TextInput, Text, Button, Surface, Headline,
   Avatar, Caption, Appbar, Menu, Divider, Provider, List 
@@ -22,8 +20,6 @@ export function Perfil() {
       .catch(error => alert(error.message))
   }
 
-  const [visible, setVisible] = React.useState(false);
-
   return (
     <><Appbar.Header style={{ backgroundColor: '#009b00', elevation: 0, }}>
       <Appbar.Action icon="menu" />
@@ -38,17 +34,17 @@ export function Perfil() {
           elevation: 0
         }}/>
         <Avatar.Image size={90} source={require('../../teste.jpg')}
-          style={{  marginTop:'-10%', alignSelf: 'center', alignItems: 'center', justifyContent: 'center', borderWidth: '49%', borderStyle: 'solid', borderColor: 'green', borderRadius: '100%' }} />
-         <Headline  style={{ alignSelf: 'center', marginTop: '5%' }}>Isrhael Barcelos</Headline>
-         <Caption style={{ alignSelf: 'center', }}>(Rhael)</Caption>
+          style={{  marginTop:'-10%', alignItems: 'center', justifyContent: 'center', borderStyle: 'solid', borderColor: 'green', alignSelf: 'center' }} />
+         <Headline  style={{  marginTop: '5%', alignSelf: 'center' }}>Isrhael Barcelos</Headline>
+         <Caption style={{ alignSelf: 'center' }}>(Rhael)</Caption>
 
         <Surface style={{
           padding: 8,
           height: 'auto',
           width: '90%',
           elevation: 2,
-          alignSelf: 'center',
           borderRadius: 15,
+          alignSelf: 'center',
           marginTop: '8%'
         }}>
           <TouchableOpacity onPress={console.log("teste")}>
@@ -83,9 +79,9 @@ export function Perfil() {
           height: 'auto',
           width: '90%',
           elevation: 2,
-          alignSelf: 'center',
           borderRadius: 15,
-          marginTop: '5%'
+          alignSelf: 'center',
+          marginTop: '3%'
         }}>
           <List.Item
             title="Meus Pedidos"
@@ -114,9 +110,9 @@ export function Perfil() {
           height: 'auto',
           width: '90%',
           elevation: 2,
-          alignSelf: 'center',
           borderRadius: 15,
-          marginTop: '5%',
+          marginTop: '3%',
+          alignSelf: 'center'
         }}>
           <List.Item
             title="Logout"
@@ -126,7 +122,7 @@ export function Perfil() {
         </Surface>
 
 
-        <Caption style={{ alignSelf: 'center', marginTop: '5%'}}>Re-User - Todos os direitos reservados.</Caption>
+        <Caption style={{  marginTop: '5%', alignSelf: 'center'}}>Re-User - Todos os direitos reservados.</Caption>
         
       </ScrollView>
     </>

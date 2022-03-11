@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import {
   TextInput, Divider, Button, Surface, Searchbar,
-  Avatar, IconButton, Subheading, Menu, Text, RadioButton
+  Avatar, IconButton, Subheading, Menu, Text, RadioButton, Title, Caption
 } from 'react-native-paper';
 
 export function CadastroUsuario() {
@@ -76,84 +76,95 @@ export function CadastroUsuario() {
 
     <ScrollView>
 
-      <TextInput
-        fullWidth
-        margin="normal"
-        required
-        size="small"
-        id="email-form"
-        label="Email"
-        defaultValue="Email"
-        value={email} onChange={(e) => setEmail(e.target.value)} />
+<View style={{ alignItems: 'center'}}>
+      <Title style={{ marginTop: '15%', color: 'green' }}>Cadastre-se</Title>
+      <Caption style={{ color: 'grey' }}>Cadastre-se com</Caption>     
+      </View>
+      <Divider style={{width: '90%', /*alignSelf: 'center'}*/}}/>
 
-      <TextInput
-        fullWidth
-        margin="normal"
-        required
-        size="small"
-        id="senha-form"
-        label="Senha"
-        defaultValue="Senha"
-        value={senha} onChange={(e) => setSenha(e.target.value)} />
+      <View style={{ alignSelf: 'center', flexDirection:'row', marginTop: '2%' }}>
+      <IconButton
+    icon="facebook"
+    mode="contained"
+    size={50}
+    onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}
+  />
+  <IconButton
+  icon="google-plus"
+  mode="contained"
+  size={50}
+  onPress={() => console.log('Pressed')}
+/>
 
+  </View>
+  <Caption style={{ color: 'grey', alignSelf: 'center', marginTop: '3%' }}>ou através do E-mail</Caption>
+  <Divider style={{width: '90%', alignSelf: 'center'}}/>
 
-      <TextInput
-        fullWidth
-        margin="normal"
-        required
-        size="small"
-        id="cliente-form"
-        label="Nome do cliente"
-        defaultValue="Cliente"
-        value={nome} onChange={(e) => setNome(e.target.value)} />
+     {/*  <View style={{ alignItems: 'center' }}>
+        <LottieView
+          resizeMode='cover' autoSize autoPlay loop
+          ref={animation => {
+            this.animation = animation;
+          }}
+          style={{
+            width: 200,
+            height: 200,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '5%',
+          }}
+          source={require('../../login.json')}
+        // OR find more Lottie files @ https://lottiefiles.com/featured
+        // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
+        /></View> */}
+      <View style={{ alignItems: 'center', }}>
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Nome completo</Subheading>
+        <TextInput
+          label="Nome"
+          placeholder="Nome"
+          right={<TextInput.Icon name="account-circle" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>E-mail</Subheading>
+        <TextInput
+          label="E-mail"
+          placeholder="exemlo@exemplo.com"
+          right={<TextInput.Icon name="email" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Senha</Subheading>
+        <TextInput
+          label="Senha"
+          placeholder="**********"
+          right={<TextInput.Icon name="eye" color="lightgrey" />}
+          style={{ width: '85%',}}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+          secureTextEntry
+        />
+      </View>
 
-      {/*<TextInput
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  id="outlined-required"
-                  label="CEP"
-                  type="text"
-                  defaultValue="CEP" value={cep} onChange={(e) => setCep(e.target.value)} />
-  
-                <TextInput
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  id="outlined-required"
-                  label="Endereço"
-                  type="text"
-                  defaultValue="Rua" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
-  
-                <TextInput
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  id="outlined-required"
-                  label="Bairro"
-                  type="text"
-                  defaultValue="Rua" value={bairro} onChange={(e) => setBairro(e.target.value)} />
-  
-                <TextInput
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  id="outlined-required"
-                  label="Cidade"
-                  type="text"
-                  defaultValue="Cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} />
-  
-                <TextInput
-                  fullWidth
-                  margin="normal"
-                  size="small"
-                  id="outlined-textarea"
-                  label="Whatsapp"
-                  placeholder="Contato"
-    multiline value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />*/}
-
-      <Button fullWidth variant="outlined"
-        onPress={handleAdd}>Enviar Cadastro</Button>
+      <View style={{ alignItems: 'center', marginTop: '15%', }}>
+        <Button
+          onPress={handleAdd}
+          mode="contained"
+          raised theme={{ roundness: 9 }}
+          style={{ width: '85%', height: '25%', justifyContent:'center' , elevation: 0 }}
+        >
+          Cadastrar
+        </Button>
+        <Button
+          mode="text"
+          raised theme={{ roundness: 6 }}
+          style={{ width: '50%', marginTop: '3%', }}
+        >
+          Cancelar
+        </Button>
+      </View>
     </ScrollView>
 
 

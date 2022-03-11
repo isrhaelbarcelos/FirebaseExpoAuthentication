@@ -22,7 +22,7 @@ export function Categoria() {
         justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection: 'row',
-        borderColor: 'transparent'
+        borderColor: 'transparent',
       }}>
         <View style={{ alignItems: 'center' }}>
           <IconButton
@@ -74,9 +74,9 @@ export function Categoria() {
           padding: 8,
           width: '90%',
           elevation: 2,
-          alignSelf: 'center',
           borderRadius: 6,
           marginTop: '8%',
+          alignSelf: 'center'
         }}>
 
           

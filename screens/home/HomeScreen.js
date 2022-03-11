@@ -83,7 +83,7 @@ const HomeScreen = () => {
 
   return ( 
     <ScrollView>
-        <View style={{ width: '90%', alignSelf: 'center',  }}>
+        <View style={{ width: '90%',  }}>
           <Searchbar
             placeholder="Search"
             onChangeText={onChangeSearch}

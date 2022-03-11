@@ -5,7 +5,10 @@ import { auth } from '../../firebase'
 import { Button, TextInput, Drawer, Subheading, Title, Caption, Divider, IconButton, Provider, Modal,
 Text, Portal } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
+
+
 import CadastroUsuario from '../cadastro-usuario/CadastroUsuario';
+
 
 const LoginScreen = () => {
 
@@ -113,7 +116,7 @@ const LoginScreen = () => {
 />
 
   </View>
-  <Caption style={{ color: 'grey', alignSelf: 'center',marginTop: '3%' }}>ou através do E-mail</Caption>
+  <Caption style={{ color: 'grey', alignSelf: 'center', marginTop: '3%' }}>ou através do E-mail</Caption>
   <Divider style={{width: '90%', alignSelf: 'center'}}/>
 
      {/*  <View style={{ alignItems: 'center' }}>
@@ -134,7 +137,7 @@ const LoginScreen = () => {
         // Just click the one you like, place that file in the 'assets' folder to the left, and replace the above 'require' statement
         /></View> */}
       <View style={{ alignItems: 'center', }}>
-        <Subheading style={{ alignSelf: 'left', marginTop: '3%', marginLeft: '10%', color: 'green' }}>E-mail</Subheading>
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>E-mail</Subheading>
         <TextInput
           label="E-mail"
           placeholder="exemlo@exemplo.com"
@@ -145,7 +148,7 @@ const LoginScreen = () => {
           mode="outlined"
           raised theme={{ roundness: 9 }}
         />
-        <Subheading style={{ alignSelf: 'left', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Senha</Subheading>
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Senha</Subheading>
         <TextInput
           label="Senha"
           placeholder="**********"
@@ -169,7 +172,7 @@ const LoginScreen = () => {
           Entrar
         </Button>
         <Button
-          onPress={() => navigation.navigate('CadastroUsuario')}
+          onPress={() => navigation.navigate(CadastroUsuario)}
           mode="text"
           raised theme={{ roundness: 6 }}
           style={{ width: '50%', marginTop: '3%', }}

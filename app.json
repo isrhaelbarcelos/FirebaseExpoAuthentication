@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "FirebaseAuth",
-    "slug": "FirebaseAuth",
+    "name": "Re-User",
+    "slug": "Re-User",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "entryPoint": "node_modules/expo/AppEntry.js"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,6 +28,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "packagerOpts":{
+      "sourceExts": [ "js", "json", "ts", "tsx", "jsx", "vue"]
     }
   }
 }
