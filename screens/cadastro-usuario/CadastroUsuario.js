@@ -122,7 +122,68 @@ export function CadastroUsuario() {
         <TextInput
           label="Nome"
           placeholder="Nome"
+          value={nome}
           right={<TextInput.Icon name="account-circle" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Endereço</Subheading>
+        <TextInput
+          label="Endereço"
+          placeholder="Endereço"
+          value={endereco}
+          right={<TextInput.Icon name="map-marker-radius" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Bairro</Subheading>
+        <TextInput
+          label="Bairro"
+          placeholder="Bairro"
+          value={endereco}
+          right={<TextInput.Icon name="map-marker-radius" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Cidade</Subheading>
+        <TextInput
+          label="Cidade"
+          placeholder="Cidade"
+          value={cidade}
+          right={<TextInput.Icon name="map-marker-radius" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Estado</Subheading>
+        <TextInput
+          label="Estado"
+          placeholder="Estado"
+          value={estado}
+          right={<TextInput.Icon name="map-marker-radius" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>CEP</Subheading>
+        <TextInput
+          label="CEP"
+          placeholder="CEP"
+          value={cep}
+          right={<TextInput.Icon name="map-marker-radius" color="lightgrey" />}
+          style={{ width: '85%', color: '#73D408' }}
+          mode="outlined"
+          raised theme={{ roundness: 9 }}
+        />
+        <Subheading style={{ alignSelf: 'flex-start', marginTop: '3%', marginLeft: '10%', color: 'green' }}>Whatsapp</Subheading>
+        <TextInput
+          label="Whatsapp"
+          placeholder="Whatsapp"
+          value={whatsapp}
+          right={<TextInput.Icon name="whatsapp" color="lightgrey" />}
           style={{ width: '85%', color: '#73D408' }}
           mode="outlined"
           raised theme={{ roundness: 9 }}
@@ -148,12 +209,12 @@ export function CadastroUsuario() {
         />
       </View>
 
-      <View style={{ alignItems: 'center', marginTop: '15%', }}>
+      <View style={{ alignItems: 'center', marginTop: '5%', }}>
         <Button
           onPress={handleAdd}
           mode="contained"
           raised theme={{ roundness: 9 }}
-          style={{ width: '85%', height: '25%', justifyContent:'center' , elevation: 0 }}
+          style={{ width: '85%', height: '20%', justifyContent:'center' , elevation: 0 }}
         >
           Cadastrar
         </Button>
