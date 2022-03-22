@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>890900383081-q1o6mcp9a1kot8bil64rbf4t4c9p36h8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.890900383081-q1o6mcp9a1kot8bil64rbf4t4c9p36h8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOOkgp3BOl5ohprQxlLIR9_33RyffjMuw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>890900383081</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>reuser.ios.app</string>
+	<key>PROJECT_ID</key>
+	<string>webbacktrash</string>
+	<key>STORAGE_BUCKET</key>
+	<string>webbacktrash.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:890900383081:ios:15391f5ae0fb87c10669f8</string>
+	<key>DATABASE_URL</key>
+	<string>https://webbacktrash-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
