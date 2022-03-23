@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "890900383081",
+    "firebase_url": "https://webbacktrash-default-rtdb.firebaseio.com",
+    "project_id": "webbacktrash",
+    "storage_bucket": "webbacktrash.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890900383081:android:a55ea606380054d90669f8",
+        "android_client_info": {
+          "package_name": "fatec.com.reuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890900383081-a8c5k9oesup8jskdfdf2t5mkqlpvhu8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHXoEJCwza61bOjBz9Skdjp177ubG60F4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890900383081-a8c5k9oesup8jskdfdf2t5mkqlpvhu8m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "890900383081-q1o6mcp9a1kot8bil64rbf4t4c9p36h8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "reuser.ios.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890900383081:android:4a7d55403a6ce82e0669f8",
+        "android_client_info": {
+          "package_name": "fatec.com.reuserapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890900383081-a8c5k9oesup8jskdfdf2t5mkqlpvhu8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHXoEJCwza61bOjBz9Skdjp177ubG60F4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890900383081-a8c5k9oesup8jskdfdf2t5mkqlpvhu8m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "890900383081-q1o6mcp9a1kot8bil64rbf4t4c9p36h8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "reuser.ios.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
