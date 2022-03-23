@@ -42,7 +42,7 @@ export function Main() {
         name="Carrinho"
         component={Carrinho}
         options={{       
-        headerShown: false,
+        headerShown: true,
           tabBarIcon: ({ size, color  }) => (
             <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),

@@ -28,6 +28,8 @@ import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Nullable;
 
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+
  new RNFirebaseNotificationsPackage();
 
 public class MainApplication extends Application implements ReactApplication {
@@ -46,6 +48,9 @@ public class MainApplication extends Application implements ReactApplication {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
       return packages;
+      return Arrays.asList(
+    new MainReactPackage(),
+    new ReactNativeFirebaseAppPackage(),
     }
 
     @Override
