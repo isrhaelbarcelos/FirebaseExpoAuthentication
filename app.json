@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.reuser.app",
+      "bundleIdentifier": "reuser.ios.app",
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
@@ -27,7 +27,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.reuser.app",
+      "package": "fatec.com.reuser",
       "googleServicesFile": "./android/app/google-services.json"
     },
     "web": {

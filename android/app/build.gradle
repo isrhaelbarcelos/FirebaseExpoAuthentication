@@ -1,4 +1,5 @@
-apply plugin: "com.reuser.app"
+apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -133,7 +134,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reuser"
+        applicationId "fatec.com.reuser"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -187,6 +188,22 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ":@react-native-firebase_app")
+
+implementation platform('com.google.firebase:firebase-bom:29.2.1')
+
+  // When using the BoM, you don't specify versions in Firebase library dependencies
+
+  // Declare the dependency for the Firebase SDK for Google Analytics
+  implementation 'com.google.firebase:firebase-analytics'
+
+  // Declare the dependencies for any other desired Firebase products
+  // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+  implementation 'com.google.firebase:firebase-auth'
+  implementation 'com.google.firebase:firebase-app'
+  implementation 'com.google.firebase:firebase-firestore'
+  implementation 'com.google.firebase:firebase-core:16.0.1'
+implementation 'com.google.firebase:firebase-messaging:17.0.0'
+
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"

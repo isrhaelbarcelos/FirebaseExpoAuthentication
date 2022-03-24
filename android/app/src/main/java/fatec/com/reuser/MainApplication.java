@@ -1,4 +1,4 @@
-package com.reuser.app;
+package fatec.com.reuser;
 
 import android.app.Application;
 import android.content.Context;
@@ -11,7 +11,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.reuser.app.generated.BasePackageList;
+import fatec.com.reuser.generated.BasePackageList;
 
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
@@ -29,8 +29,9 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
-
- new RNFirebaseNotificationsPackage();
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 
 public class MainApplication extends Application implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
@@ -51,6 +52,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.asList(
     new MainReactPackage(),
     new ReactNativeFirebaseAppPackage(),
+    new RNFirebaseNotificationsPackage(););
     }
 
     @Override
@@ -114,7 +116,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.reuser.app.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("fatec.com.reuser.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

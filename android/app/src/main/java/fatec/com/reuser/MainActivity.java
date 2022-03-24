@@ -1,4 +1,4 @@
-package com.reuser.app;
+package fatec.com.reuser;
 
 import android.os.Bundle;
 

@@ -41,6 +41,8 @@ export function CadastroUsuario() {
     setOpen(false);
   };
 
+  const read = firestore().collection('usuarios').doc('H605d5EuwgVHT0g8hfvI02AA14l1').get();
+
   const handleAdd = () => {
     firestore()
       .collection('usuarios')
@@ -71,6 +73,11 @@ export function CadastroUsuario() {
   return (
 
     <ScrollView>
+
+      <Button
+      onPress={() => console.log(read)}
+      
+      ></Button>
 
 <View style={{ alignItems: 'center'}}>
       <Title style={{ marginTop: '15%', color: 'green' }}>Cadastre-se</Title>
